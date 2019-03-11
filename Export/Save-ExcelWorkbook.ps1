@@ -23,7 +23,12 @@ Function Save-ExcelWorkbook {
 
         Write-Verbose -Message "Saving Workbook as $File"
 
-        $App.ActiveDocument.SaveAs($File)
+        # https://docs.microsoft.com/en-us/office/vba/api/excel.workbook.saveas
+        # https://docs.microsoft.com/en-us/office/vba/api/excel.xlfileformat
+        $App.ActiveWorkbook.SaveAs(
+            $File,
+            [Microsoft.Office.Interop.Excel.XlFileFormat]::xlOpenXMLWorkbook
+        )
 
     }
 

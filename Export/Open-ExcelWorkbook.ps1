@@ -34,7 +34,7 @@ Function Open-ExcelWorkbook {
         $DefaultValue = [Type]::Missing
 
         # https://docs.microsoft.com/en-us/office/vba/api/excel.workbooks.open
-        [void]$App.Documents.Open(
+        [void]$App.Workbooks.Open(
             $File,	                # FileName. String. The file name of the workbook to be opened.
             $DefaultValue,	        # UpdateLinks. Specifies the way external references (links) in the file, 
                                     # such as the reference to a range in the Budget.xls workbook in the following 

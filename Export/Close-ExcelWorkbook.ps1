@@ -18,12 +18,12 @@ Function Close-ExcelWorkbook {
         Write-Verbose -Message "Closing current Workbook"
 
         # Check version of Excel installed and discard changes
-        If (Get-ExcelVersion -eq '14') {
-            $App.ActiveDocument.Close([ref]$False)
+        If ($(Get-ExcelVersion) -eq 14) {
+            $App.ActiveWorkbook.Close([ref]$False)
         }
         Else {
             # Office 2013 or newer
-            $App.ActiveDocument.Close($False)  
+            $App.ActiveWorkbook.Close($False)  
         }
 
     }

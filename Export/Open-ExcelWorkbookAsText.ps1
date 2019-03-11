@@ -31,10 +31,10 @@ Function Open-ExcelWorkbookAsText {
         Start-Sleep -Seconds 1
 
         # Use [Type]::Missing for parameters that you want used with their default value.
-        $DefaultValue = [Type]::Missing
+        #$DefaultValue = [Type]::Missing
 
         # https://docs.microsoft.com/en-us/office/vba/api/excel.workbooks.opentext
-        [void]$App.Documents.OpenText(
+        [void]$App.Workbooks.OpenText(
             $File
         )
 

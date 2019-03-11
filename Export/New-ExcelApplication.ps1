@@ -41,6 +41,9 @@ Function New-ExcelApplication {
             $App.Visible = $False
         }
 
+        # https://stackoverflow.com/questions/14634453/how-to-use-workbook-saveas-with-automatic-overwrite
+        $App.DisplayAlerts = $False
+
         # I hate such lousy Workarounds. But Excel seems to sometimes reject RPC Calls 
         # if we directly return the Object after launching the App.
         # This must be enough for now.

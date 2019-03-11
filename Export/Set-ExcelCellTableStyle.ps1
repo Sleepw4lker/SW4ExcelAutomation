@@ -7,7 +7,7 @@ function Set-ExcelCellTableStyle {
         $App,
 
         [Parameter(Mandatory=$True)]
-        [ValidateScript({$(Get-ExcelTableStyles) -contains $_})]
+        [ValidateNotNullOrEmpty()]
         [String]
         $TableStyle,
 

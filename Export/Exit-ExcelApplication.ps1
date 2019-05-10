@@ -17,7 +17,7 @@ Function Exit-ExcelApplication {
     process {
 
         If ($App.Application.Documents.Count -gt 0) {
-            Close-CurrentDocument $App
+            Close-ExcelWorkbook -App $App
         }
 
         Write-Verbose -Message "Exiting Excel Application"
